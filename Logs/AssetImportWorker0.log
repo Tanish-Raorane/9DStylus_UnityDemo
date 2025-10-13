@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.6f1 (b9e6e7e9fa2d) revision 12183271'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.26100) 64bit CoreSingleLanguage' Language: 'en' Physical Memory: 32468 MB
+OS: 'Windows 11  (10.0.26200) 64bit CoreSingleLanguage' Language: 'en' Physical Memory: 32468 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -9,13 +9,13 @@ C:\Program Files\Unity\Hub\Editor\2022.3.6f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker1
+AssetImportWorker0
 -projectPath
 E:/9DStylus_UnityDemo
 -logFile
-Logs/AssetImportWorker1.log
+Logs/AssetImportWorker0.log
 -srvPort
-53027
+62145
 Successfully changed project path to: E:/9DStylus_UnityDemo
 E:/9DStylus_UnityDemo
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ E:/9DStylus_UnityDemo
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [23592] Host "[IP] 172.23.213.227 [Port] 0 [Flags] 2 [Guid] 3611326931 [EditorId] 3611326931 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [4600] Host "[IP] 172.23.145.44 [Port] 0 [Flags] 2 [Guid] 1860885993 [EditorId] 1860885993 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [23592] Host "[IP] 172.23.213.227 [Port] 0 [Flags] 2 [Guid] 3611326931 [EditorId] 3611326931 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [4600] Host "[IP] 172.23.145.44 [Port] 0 [Flags] 2 [Guid] 1860885993 [EditorId] 1860885993 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 13.17 ms, found 18 plugins.
-Preloading 1 native plugins for Editor in 0.50 ms.
+Refreshing native plugins compatible for Editor in 1749.55 ms, found 18 plugins.
+Preloading 1 native plugins for Editor in 0.52 ms.
 Initialize engine version: 2022.3.6f1 (b9e6e7e9fa2d)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path E:/9DStylus_UnityDemo/Assets
@@ -69,20 +69,20 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56536
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56504
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006226 seconds.
-- Loaded All Assemblies, in  0.229 seconds
+Registered in 0.006251 seconds.
+- Loaded All Assemblies, in  2.758 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 217 ms
+Android Extension - Scanning For ADB Devices 193 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.442 seconds
-Domain Reload Profiling: 670ms
-	BeginReloadAssembly (53ms)
+- Finished resetting the current domain, in  0.403 seconds
+Domain Reload Profiling: 3161ms
+	BeginReloadAssembly (2566ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
@@ -90,26 +90,26 @@ Domain Reload Profiling: 670ms
 		CreateAndSetChildDomain (0ms)
 	RebuildCommonClasses (21ms)
 	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (43ms)
-	LoadAllAssembliesAndSetupDomain (104ms)
-		LoadAssemblies (52ms)
+	initialDomainReloadingComplete (40ms)
+	LoadAllAssembliesAndSetupDomain (124ms)
+		LoadAssemblies (2564ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (99ms)
-			TypeCache.Refresh (98ms)
-				TypeCache.ScanAssembly (90ms)
+		AnalyzeDomain (120ms)
+			TypeCache.Refresh (120ms)
+				TypeCache.ScanAssembly (112ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (443ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (404ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (403ms)
+		SetupLoadedEditorAssemblies (369ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (309ms)
+			InitializePlatformSupportModulesInManaged (274ms)
 			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (1ms)
-			ProcessInitializeOnLoadAttributes (60ms)
-			ProcessInitializeOnLoadMethodAttributes (30ms)
+			ProcessInitializeOnLoadAttributes (52ms)
+			ProcessInitializeOnLoadMethodAttributes (39ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -120,8 +120,8 @@ Assets/models/RobotArm/Rmk3.c4d: Unity no longer supports importing Cinema 4D fi
 
 Please note that FBX files exported from Cinema4D are still supported.
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.499 seconds
-Refreshing native plugins compatible for Editor in 7.59 ms, found 18 plugins.
+- Loaded All Assemblies, in  2.212 seconds
+Refreshing native plugins compatible for Editor in 6.95 ms, found 18 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Package Manager log level set to [2]
@@ -150,36 +150,36 @@ Mono: successfully reloaded assembly
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  0.531 seconds
-Domain Reload Profiling: 1029ms
-	BeginReloadAssembly (87ms)
+- Finished resetting the current domain, in  0.465 seconds
+Domain Reload Profiling: 2675ms
+	BeginReloadAssembly (79ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (15ms)
-	RebuildCommonClasses (21ms)
+		CreateAndSetChildDomain (13ms)
+	RebuildCommonClasses (20ms)
 	RebuildNativeTypeToScriptingClass (6ms)
 	initialDomainReloadingComplete (18ms)
-	LoadAllAssembliesAndSetupDomain (364ms)
-		LoadAssemblies (191ms)
+	LoadAllAssembliesAndSetupDomain (2087ms)
+		LoadAssemblies (1659ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (214ms)
-			TypeCache.Refresh (188ms)
-				TypeCache.ScanAssembly (178ms)
-			ScanForSourceGeneratedMonoScriptInfo (19ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (532ms)
+		AnalyzeDomain (464ms)
+			TypeCache.Refresh (442ms)
+				TypeCache.ScanAssembly (369ms)
+			ScanForSourceGeneratedMonoScriptInfo (17ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (465ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (399ms)
+		SetupLoadedEditorAssemblies (353ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (16ms)
-			SetLoadedEditorAssemblies (3ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (78ms)
-			ProcessInitializeOnLoadAttributes (214ms)
-			ProcessInitializeOnLoadMethodAttributes (83ms)
+			BeforeProcessingInitializeOnLoad (68ms)
+			ProcessInitializeOnLoadAttributes (190ms)
+			ProcessInitializeOnLoadMethodAttributes (72ms)
 			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -187,13 +187,13 @@ Domain Reload Profiling: 1029ms
 Assets/models/RobotArm/Rmk3.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
 
 Please note that FBX files exported from Cinema4D are still supported.
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 6.89 ms, found 18 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 7.90 ms, found 18 plugins.
 Preloading 1 native plugins for Editor in 0.05 ms.
 Unloading 5017 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 130 unused Assets / (345.0 KB). Loaded Objects now: 5496.
 Memory consumption went from 220.4 MB to 220.1 MB.
-Total: 5.207100 ms (FindLiveObjects: 0.262200 ms CreateObjectMapping: 0.106400 ms MarkObjects: 4.699200 ms  DeleteObjects: 0.138300 ms)
+Total: 2.860500 ms (FindLiveObjects: 0.395800 ms CreateObjectMapping: 0.084700 ms MarkObjects: 2.255100 ms  DeleteObjects: 0.123900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -211,25 +211,17 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 4463.526887 seconds.
-  path: Assets/materials/New Material 1.mat
-  artifactKey: Guid(42cd8e36eaf0e6740b4e62b682b32f35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/materials/New Material 1.mat using Guid(42cd8e36eaf0e6740b4e62b682b32f35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17053e66a01ed3e0cff6ae9b950eb66b') in 0.008183 seconds
+  Time since last request: 1164.432338 seconds.
+  path: Assets/JSON Dumps
+  artifactKey: Guid(3b49e6e6ebb457f40a24247856613012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JSON Dumps using Guid(3b49e6e6ebb457f40a24247856613012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1eb62f14973589359568539a15f65d56') in 0.001827 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 1.189954 seconds.
-  path: Assets/materials/teapot.mat
-  artifactKey: Guid(5ddd418b3c6aa1e469bb04b93199e8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/materials/teapot.mat using Guid(5ddd418b3c6aa1e469bb04b93199e8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fddefacac7ffdd510f2a88ac283b2f6c') in 0.000778 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.004692 seconds.
-  path: Assets/materials/test.mat
-  artifactKey: Guid(10ba98b094b423b46bdca83e6458e918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/materials/test.mat using Guid(10ba98b094b423b46bdca83e6458e918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e15bd34aefaba6e6b5f7bb097f3a7fd4') in 0.001014 seconds
+  Time since last request: 1.647809 seconds.
+  path: Assets/accessibility_dump_20250821_222952.json
+  artifactKey: Guid(8a6e13b0614c5aa41ab535fdb8bf0d82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/accessibility_dump_20250821_222952.json using Guid(8a6e13b0614c5aa41ab535fdb8bf0d82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40876e65772019685bdac15b04562c7a') in 0.001290 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
