@@ -79,6 +79,7 @@
     <Compile Include="Assets\SenmagSDK\Demos\Builder\ObjectDestroyer.cs" />
     <Compile Include="Assets\SenmagSDK\Core\Resources\EndEffectors\DK1_Stylus_V1\Tools\Tip_Deleter.cs" />
     <Compile Include="Assets\SenmagSDK\Demos\Paint_Demo\PaintBrushTrigScript.cs" />
+    <Compile Include="Assets\Scripts\HapticDesktop.cs" />
     <Compile Include="Assets\sceneScripts\SlicesMetadata.cs" />
     <Compile Include="Assets\SenmagSDK\Core\Scripts\Senmag_USBComms.cs" />
     <Compile Include="Assets\SenmagSDK\Demos\Paint_Demo\PalettePicker.cs" />
