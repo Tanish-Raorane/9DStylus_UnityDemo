@@ -551,13 +551,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27da584251d3fb248828d7788e386465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonDumps:
-  - {fileID: 4900000, guid: 8a6e13b0614c5aa41ab535fdb8bf0d82, type: 3}
-  - {fileID: 4900000, guid: 0d0e2fb3e497d914f9c42d22ea24b34f, type: 3}
+  jsonDump: {fileID: 4900000, guid: 47062cfb29dcc1344a9067a5686ff450, type: 3}
   iconPrefab: {fileID: 6074971237783675693, guid: 13c77207688bba74eb879be643ebe181,
     type: 3}
   desktopBg: {fileID: 1073832706}
-  jsonDumpNumber: 0
 --- !u!4 &619893831
 Transform:
   m_ObjectHideFlags: 0
@@ -808,7 +805,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 8.11, z: 1.8}
-  m_LocalScale: {x: 2.56, y: 1, z: 1.6}
+  m_LocalScale: {x: 2.56, y: 1, z: 1.44}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1767859982}

@@ -4,71 +4,36 @@ using UnityEngine;
 using Newtonsoft.Json;
 using System.Linq;
 
-
 public class HapticDesktop : MonoBehaviour
 {
-    public TextAsset[] jsonDumps;
-
+    public TextAsset jsonDump; // changed to a single file for clarity
     public GameObject iconPrefab;
-
     public GameObject desktopBg;
 
-    public int jsonDumpNumber;
-
+    private Dictionary<int, List<float>> skippedElements = new Dictionary<int, List<float>>(); //List of skipped elements displayed at the end
+    private int i = 1; // Serial number to list out skipped elements
+    private int iconCounter = 0;
     void Start()
     {
-        if(jsonDumps == null || jsonDumps.Length == 0)
+        if (jsonDump == null)
         {
-            Debug.LogWarning("No JSON Dumps assigned in the Inspector");
-
-
+            Debug.LogWarning("No JSON Dump assigned in the Inspector");
             return;
         }
 
-        string jsonText = jsonDumps[0].text;
-
-        List<DesktopDump> desktopDump = JsonConvert.DeserializeObject<List<DesktopDump>>(jsonText);
-        
+        // Deserialize the JSON
+        DesktopDump desktopDump = JsonConvert.DeserializeObject<DesktopDump>(jsonDump.text);
         GenerateDesktop(desktopDump);
-
     }
 
-
-    //public void GenerateDesktop(List<DesktopDump> desktopDump)
-    //{
-    //    foreach (var desktop in desktopDump)
-    //    {
-    //        float planeWidth = desktopBg.transform.localScale.x * 10f;
-    //        float planeHeight = desktopBg.transform.localScale.z * 10f;
-
-    //        foreach (var icon in desktop.element)
-    //        {
-    //            GameObject newIcon = Instantiate(iconPrefab, desktopBg.transform);
-
-    //            float normalizedX = icon.bbox[0] / desktop.img_size[0];
-    //            float normalizedY = icon.bbox[1] / desktop.img_size[1];
-
-    //            float worldX = (normalizedX - 0.5f) * planeWidth;
-    //            float worldZ = (0.5f - normalizedY) * planeHeight;
-
-    //            Vector3 position = new Vector3(worldX, worldZ, 0f);
-    //            newIcon.transform.localPosition = position;
-
-    //            Debug.Log("Instantiated icon : " + icon.instruction);
-    //        }
-    //    }
-
-    //}
-
-
-
-    public void GenerateDesktop(List<DesktopDump> desktopDumps)
+    public void GenerateDesktop(DesktopDump desktop)
     {
         if (desktopBg == null)
         {
             Debug.LogError("desktopBg is not assigned!");
             return;
         }
+
         if (iconPrefab == null)
         {
             Debug.LogError("iconPrefab is not assigned!");
@@ -82,66 +47,86 @@ public class HapticDesktop : MonoBehaviour
             return;
         }
 
-        //// Get world size of the desktop surface
         //Vector3 worldSize = desktopRenderer.bounds.size;
+        //Debug.Log("World Size: " + worldSize.x + ", " + worldSize.z);
+        Vector3 worldSize = new Vector3 (25.6f, 10f, 14.40f);
         
-
-        Vector3 worldSize = new Vector3(25.6f, 10f, 16f);
         Transform dt = desktopBg.transform;
 
-        foreach (var desktop in desktopDumps)
+        if (desktop.elements == null)
         {
-            if (desktop.element == null) continue;
-
-            float imgW = (desktop.img_size != null && desktop.img_size.Count >= 2) ? (float)desktop.img_size[0] : 1f;
-            float imgH = (desktop.img_size != null && desktop.img_size.Count >= 2) ? (float)desktop.img_size[1] : 1f;
-
-            foreach (var icon in desktop.element)
-            {
-                // --- Use "point" instead of bbox ---
-                if (icon.point == null || icon.point.Count < 2)
-                {
-                    Debug.LogWarning("Skipping icon with missing point: " + icon.instruction);
-                    continue;
-                }
-
-                // Extract normalized coordinates
-                float normalizedX = icon.point[0];
-                float normalizedY = icon.point[1];
-
-                // Determine if point is normalized (0..1) or pixel coordinates
-                bool isNormalized = (normalizedX <= 1f && normalizedY <= 1f);
-                if (!isNormalized)
-                {
-                    normalizedX /= imgW;
-                    normalizedY /= imgH;
-                }
-
-                normalizedX = Mathf.Clamp01(normalizedX);
-                normalizedY = Mathf.Clamp01(normalizedY);
-
-                // Convert normalized [0,1] coords to Unity world offsets
-                float offsetX_world = (normalizedX - 0.5f) * worldSize.x;
-                float offsetY_world = (0.5f - normalizedY) * worldSize.y;
-
-                // Convert to local position relative to the desktop background
-                Vector3 worldPos = dt.position + dt.right * offsetX_world + dt.up * offsetY_world;
-                Vector3 localPos = dt.InverseTransformPoint(worldPos);
-
-                // Instantiate and position the icon
-                GameObject newIcon = Instantiate(iconPrefab, desktopBg.transform);
-                newIcon.name = icon.instruction;
-                newIcon.transform.localPosition = new Vector3(localPos.x, 0.05f, localPos.y);
-
-                // Optional: scale icons consistently small so they don’t overlap
-                //newIcon.transform.localScale = Vector3.one * 0.05f;
-
-                Debug.Log($"Instantiated '{icon.instruction}' at {localPos} (norm: {normalizedX:F2}, {normalizedY:F2})");
-            }
+            Debug.LogWarning("No elements found in JSON.");
+            return;
         }
-    }
-    void Update()
-    {
+
+        float imgW = (desktop.img_size != null && desktop.img_size.Count >= 2) ? (float)desktop.img_size[0] : 1f;
+        float imgH = (desktop.img_size != null && desktop.img_size.Count >= 2) ? (float)desktop.img_size[1] : 1f;
+
+        //float imgW = 2560;
+        //float imgH = 1440;
+
+        foreach (var icon in desktop.elements)
+        {
+            iconCounter++;
+            if (icon.bbox == null || icon.bbox.Count < 4)
+                continue;
+
+            if(string.IsNullOrEmpty(icon.name))
+            {
+                skippedElements.Add(i, icon.bbox);
+                i++;
+                continue;
+            }
+
+            // --- Compute point from bbox ---
+            float bboxLeft = icon.bbox[0];
+            float bboxTop = icon.bbox[1];
+            float bboxWidth = icon.bbox[2];
+            float bboxHeight = icon.bbox[3];
+
+            
+
+            float pointX = bboxLeft + bboxWidth / 2f;
+            float pointY = bboxTop + bboxHeight / 2f;
+
+            // Normalize point coordinates
+            float normalizedX = pointX / imgW;
+            float normalizedY = pointY / imgH;
+
+            normalizedX = Mathf.Clamp01(normalizedX);
+            normalizedY = Mathf.Clamp01(normalizedY);
+
+            // Map normalized coords to world space on desktop
+            float offsetX_world = (normalizedX - 0.5f) * worldSize.x;
+            float offsetY_world = (0.5f - normalizedY) * worldSize.y;
+
+            Vector3 worldPos = dt.position + dt.right * offsetX_world + dt.up * offsetY_world;
+            Vector3 localPos = dt.InverseTransformPoint(worldPos);
+
+            // Mapping LocalScale of icons to Unity World Scale
+            float normalizedWidth = icon.bbox[2] / imgW;
+            float normalizedHeight = icon.bbox[3] / imgH;
+
+            float worldWidth = normalizedWidth * worldSize.x;
+            float worldHeight = normalizedHeight * worldSize.y;
+
+
+            float zBase = 0.03f;
+            float zSpacing = 0.1f;
+            float localY = zBase + zSpacing * icon.z_index;
+
+            // Instantiate icon prefab
+            GameObject newIcon = Instantiate(iconPrefab, desktopBg.transform);
+            newIcon.name = icon.name ?? "UIElement";
+            newIcon.transform.localPosition = new Vector3(localPos.x, localY, localPos.y);
+
+            newIcon.transform.localScale = new Vector3(worldWidth / dt.lossyScale.x, 0.05f, worldHeight / dt.lossyScale.z);
+
+            Debug.Log($"Instantiated '{newIcon.name}' at {localPos} (norm: {normalizedX:F2}, {normalizedY:F2})");
+        }
+
+        Debug.Log("Total Number of Icons : " + iconCounter);
+        Debug.Log("Number of Skipped Elements : "+ skippedElements.Count);
         
     }
 }
@@ -149,17 +134,16 @@ public class HapticDesktop : MonoBehaviour
 [System.Serializable]
 public class DesktopDump
 {
-    public string img_url;
-    public List<int> img_size;
-    public List<IconData> element;
-
+    public string timestamp;
+    public List<int> img_size; // you can manually set this for now
+    public List<ElementData> elements;
 }
 
-
 [System.Serializable]
-public class IconData
+public class ElementData
 {
-    public string instruction;
+    public string name;
+    public string control_type;
     public List<float> bbox;
-    public List<float> point;
+    public int z_index;
 }
