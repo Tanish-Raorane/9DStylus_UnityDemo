@@ -111,8 +111,8 @@ public class HapticDesktop : MonoBehaviour
             float worldHeight = normalizedHeight * worldSize.y;
 
 
-            float zBase = 0.03f;
-            float zSpacing = 0.1f;
+            float zBase = 0.05f;
+            float zSpacing = 0.4f;
             float localY = zBase + zSpacing * icon.z_index;
 
             // Instantiate icon prefab
@@ -120,7 +120,7 @@ public class HapticDesktop : MonoBehaviour
             newIcon.name = icon.name ?? "UIElement";
             newIcon.transform.localPosition = new Vector3(localPos.x, localY, localPos.y);
 
-            newIcon.transform.localScale = new Vector3(worldWidth / dt.lossyScale.x, 0.05f, worldHeight / dt.lossyScale.z);
+            newIcon.transform.localScale = new Vector3(worldWidth / dt.lossyScale.x, 0.1f, worldHeight / dt.lossyScale.z);
 
             Debug.Log($"Instantiated '{newIcon.name}' at {localPos} (norm: {normalizedX:F2}, {normalizedY:F2})");
         }

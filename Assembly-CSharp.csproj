@@ -63,6 +63,7 @@
     <Compile Include="Assets\sceneScripts\CreeperBehaviour.cs" />
     <Compile Include="Assets\sceneScripts\CreeperOnButtonPress.cs" />
     <Compile Include="Assets\sceneScripts\SnapToGrid.cs" />
+    <Compile Include="Assets\Scripts\DesktopManager.cs" />
     <Compile Include="Assets\sceneScripts\Slicer.cs" />
     <Compile Include="Assets\sceneScripts\TelerobotDemo.cs" />
     <Compile Include="Assets\sceneScripts\MessageBanner.cs" />
