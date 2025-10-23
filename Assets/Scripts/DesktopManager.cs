@@ -19,13 +19,20 @@ public class DesktopManager : MonoBehaviour
 
     public float moveSpeed = 2f;
 
+    //private float xMin, yMin, xMax, yMax;
+    public Renderer virtualDesktopRenderer;
+    private Vector3 minBounds, maxBounds;
+   
+
 
     private Vector2 prevMousePos;
     
     void Start()
     {
         prevMousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-
+        minBounds = virtualDesktopRenderer.bounds.min;
+        maxBounds = virtualDesktopRenderer.bounds.max;
+        Debug.Log("Min bounds, Max bounds : "+minBounds + " " + maxBounds);
 
     }
 
@@ -36,12 +43,20 @@ public class DesktopManager : MonoBehaviour
         if(enableKeyboardControl)
         {
             float moveX = Input.GetAxis("Horizontal");
-            float moveZ = Input.GetAxis("Vertical");
-            Vector3 move = new Vector3(moveX, 0f, moveZ) * moveSpeed * Time.deltaTime;
+            float movey = Input.GetAxis("Vertical");
+            Vector3 move = new Vector3(moveX, movey, 0f) * moveSpeed * Time.deltaTime;
             movingObject.Translate(move, Space.World);
 
 
         }
+
+        float normalizedX = Mathf.InverseLerp(minBounds.x, maxBounds.x, movingObject.position.x);
+        float normalizedY = Mathf.InverseLerp(minBounds.y, maxBounds.y, movingObject.position.y);
+
+        int screenX = Mathf.RoundToInt(normalizedX * 2560f);
+        int screenY = Mathf.RoundToInt((1 - normalizedY) * 1440f);
+
+        SetCursorPos(screenX, screenY); 
 
     }
 }
