@@ -120,7 +120,7 @@ public class HapticDesktop : MonoBehaviour
             newIcon.name = icon.name ?? "UIElement";
             newIcon.transform.localPosition = new Vector3(localPos.x, localY, localPos.y);
 
-            newIcon.transform.localScale = new Vector3(worldWidth / dt.lossyScale.x, 0.1f, worldHeight / dt.lossyScale.z);
+            newIcon.transform.localScale = new Vector3(worldWidth / dt.lossyScale.x, 0.3f, worldHeight / dt.lossyScale.z);
 
             Debug.Log($"Instantiated '{newIcon.name}' at {localPos} (norm: {normalizedX:F2}, {normalizedY:F2})");
         }

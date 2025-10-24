@@ -153,9 +153,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingObject: {fileID: 1565550947}
-  enableKeyboardControl: 1
+  enableKeyboardControl: 0
+  overrideMouse: 0
   moveSpeed: 2
   virtualDesktopRenderer: {fileID: 1073832708}
+  senmagWorkspace: {fileID: 79402355}
 --- !u!4 &50376032
 Transform:
   m_ObjectHideFlags: 0
@@ -190,7 +192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &79402357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,13 +217,13 @@ MonoBehaviour:
   physicsFramerate: 1000
   physicsIterations: 15
   hapticStiffness: 1
-  spatialMultiplier: 12
+  spatialMultiplier: 50
   defaultCursorModel: {fileID: 0}
   defaultRightClickMenu: {fileID: 506018373148453668, guid: 2eeae62e4d81e98448229671b00bc41f,
     type: 3}
   cursorMass: 0.00015
   teleportThreshold: 0.45
-  cursorScale: 0.5
+  cursorScale: 4
   cursorFrictionStatic: 0
   cursorFrictionDynamic: 0
   allowCustomCursors: 0
@@ -306,7 +308,7 @@ Transform:
   m_GameObject: {fileID: 79402355}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8.11, z: 2.19}
+  m_LocalPosition: {x: 0, y: 8.11, z: 2.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -809,7 +811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27da584251d3fb248828d7788e386465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonDump: {fileID: 4900000, guid: f02688bbbf154cb4e9c0f68892fb719a, type: 3}
+  jsonDump: {fileID: 4900000, guid: af61858aef44bdb45ba5a306383578eb, type: 3}
   iconPrefab: {fileID: 6074971237783675693, guid: 13c77207688bba74eb879be643ebe181,
     type: 3}
   desktopBg: {fileID: 1073832706}
@@ -1519,7 +1521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1565550944
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1717,6 +1719,6 @@ SceneRoots:
   - {fileID: 79402361}
   - {fileID: 1521267559}
   - {fileID: 619893831}
-  - {fileID: 1441940953}
   - {fileID: 50376032}
   - {fileID: 1565550947}
+  - {fileID: 1441940953}

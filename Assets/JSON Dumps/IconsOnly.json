@@ -1,0 +1,1055 @@
+{
+    "timestamp": "2025-10-24 15:18:37",
+    "elements": [
+        {
+            "name": "Desktop 1",
+            "control_type": "PaneControl",
+            "bbox": [
+                0,
+                0,
+                2560,
+                1440
+            ],
+            "z_index": 0
+        },
+        {
+            "name": "Taskbar",
+            "control_type": "PaneControl",
+            "bbox": [
+                0,
+                1368,
+                2560,
+                72
+            ],
+            "z_index": 1
+        },
+        {
+            "name": "",
+            "control_type": "PaneControl",
+            "bbox": [
+                2191,
+                1368,
+                369,
+                72
+            ],
+            "z_index": 2
+        },
+        {
+            "name": "",
+            "control_type": "PaneControl",
+            "bbox": [
+                551,
+                1368,
+                1063,
+                72
+            ],
+            "z_index": 2
+        },
+        {
+            "name": "Running applications",
+            "control_type": "PaneControl",
+            "bbox": [
+                551,
+                1368,
+                1063,
+                72
+            ],
+            "z_index": 3
+        },
+        {
+            "name": "DesktopWindowXamlSource",
+            "control_type": "PaneControl",
+            "bbox": [
+                0,
+                1368,
+                2560,
+                72
+            ],
+            "z_index": 2
+        },
+        {
+            "name": "NVIDIA GeForce Overlay",
+            "control_type": "PaneControl",
+            "bbox": [
+                0,
+                0,
+                2560,
+                1440
+            ],
+            "z_index": 1
+        },
+        {
+            "name": "Program Manager",
+            "control_type": "PaneControl",
+            "bbox": [
+                0,
+                0,
+                2560,
+                1440
+            ],
+            "z_index": 1
+        },
+        {
+            "name": "",
+            "control_type": "PaneControl",
+            "bbox": [
+                0,
+                0,
+                2560,
+                1440
+            ],
+            "z_index": 2
+        },
+        {
+            "name": "Desktop",
+            "control_type": "ListControl",
+            "bbox": [
+                0,
+                0,
+                2560,
+                1440
+            ],
+            "z_index": 3
+        },
+        {
+            "name": "Recycle Bin",
+            "control_type": "ListItemControl",
+            "bbox": [
+                0,
+                5,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Maya 2025",
+            "control_type": "ListItemControl",
+            "bbox": [
+                0,
+                152,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Google Chrome",
+            "control_type": "ListItemControl",
+            "bbox": [
+                0,
+                299,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Microsoft Edge",
+            "control_type": "ListItemControl",
+            "bbox": [
+                0,
+                446,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "This PC",
+            "control_type": "ListItemControl",
+            "bbox": [
+                0,
+                593,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Unity Hub",
+            "control_type": "ListItemControl",
+            "bbox": [
+                0,
+                740,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Unity 2021.3.24f1",
+            "control_type": "ListItemControl",
+            "bbox": [
+                0,
+                887,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "FL Studio 21",
+            "control_type": "ListItemControl",
+            "bbox": [
+                0,
+                1034,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Thoughts",
+            "control_type": "ListItemControl",
+            "bbox": [
+                0,
+                1181,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "platform-tools-latest-windows",
+            "control_type": "ListItemControl",
+            "bbox": [
+                115,
+                5,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Steam",
+            "control_type": "ListItemControl",
+            "bbox": [
+                115,
+                152,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Unity 2022.2.1f1",
+            "control_type": "ListItemControl",
+            "bbox": [
+                115,
+                299,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Fluid Controls Flow",
+            "control_type": "ListItemControl",
+            "bbox": [
+                115,
+                446,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Unity 2022.2.8f1",
+            "control_type": "ListItemControl",
+            "bbox": [
+                115,
+                593,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Webex",
+            "control_type": "ListItemControl",
+            "bbox": [
+                115,
+                740,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "AOMEI Partition Assistant 10.3.0",
+            "control_type": "ListItemControl",
+            "bbox": [
+                115,
+                887,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Unity 2022.3.15f1",
+            "control_type": "ListItemControl",
+            "bbox": [
+                115,
+                1034,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "ScreenRec",
+            "control_type": "ListItemControl",
+            "bbox": [
+                115,
+                1181,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Autodesk Fusion 360",
+            "control_type": "ListItemControl",
+            "bbox": [
+                230,
+                5,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Blender 4.0",
+            "control_type": "ListItemControl",
+            "bbox": [
+                230,
+                152,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Model Target Generator",
+            "control_type": "ListItemControl",
+            "bbox": [
+                230,
+                299,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Unity 2021.3.13f1",
+            "control_type": "ListItemControl",
+            "bbox": [
+                230,
+                446,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Pendrive",
+            "control_type": "ListItemControl",
+            "bbox": [
+                230,
+                593,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "SideQuest",
+            "control_type": "ListItemControl",
+            "bbox": [
+                230,
+                740,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "IFPun2TanishFinal",
+            "control_type": "ListItemControl",
+            "bbox": [
+                230,
+                887,
+                115,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Think_Big_Essays",
+            "control_type": "ListItemControl",
+            "bbox": [
+                230,
+                1034,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Final_Think_Big_Essays",
+            "control_type": "ListItemControl",
+            "bbox": [
+                230,
+                1181,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "EA",
+            "control_type": "ListItemControl",
+            "bbox": [
+                345,
+                5,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Unity 2022.3.19f1",
+            "control_type": "ListItemControl",
+            "bbox": [
+                345,
+                152,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "AirDroid Cast",
+            "control_type": "ListItemControl",
+            "bbox": [
+                345,
+                299,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "14 July 2023_ABH",
+            "control_type": "ListItemControl",
+            "bbox": [
+                345,
+                446,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Discord",
+            "control_type": "ListItemControl",
+            "bbox": [
+                345,
+                593,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "eduroam-W10-UoB-eduroam_wireless_only",
+            "control_type": "ListItemControl",
+            "bbox": [
+                345,
+                740,
+                115,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Gray",
+            "control_type": "ListItemControl",
+            "bbox": [
+                345,
+                887,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "PG_Ambassador",
+            "control_type": "ListItemControl",
+            "bbox": [
+                345,
+                1034,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Floor_Plan_Maya",
+            "control_type": "ListItemControl",
+            "bbox": [
+                345,
+                1181,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "DaVinci Resolve",
+            "control_type": "ListItemControl",
+            "bbox": [
+                460,
+                5,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Insta360 Studio",
+            "control_type": "ListItemControl",
+            "bbox": [
+                460,
+                152,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Rocket_Maya",
+            "control_type": "ListItemControl",
+            "bbox": [
+                460,
+                299,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Population_One",
+            "control_type": "ListItemControl",
+            "bbox": [
+                460,
+                446,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Tanish_Raorane_Reflective_Case_Study",
+            "control_type": "ListItemControl",
+            "bbox": [
+                460,
+                593,
+                115,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Course_Rep_Signature",
+            "control_type": "ListItemControl",
+            "bbox": [
+                460,
+                740,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "CrispyDosa 12",
+            "control_type": "ListItemControl",
+            "bbox": [
+                460,
+                887,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "CrispyDosa 10",
+            "control_type": "ListItemControl",
+            "bbox": [
+                460,
+                1034,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Unity 2022.3.6f1",
+            "control_type": "ListItemControl",
+            "bbox": [
+                460,
+                1181,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Sourcetree",
+            "control_type": "ListItemControl",
+            "bbox": [
+                575,
+                5,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "CrispyDosa 13",
+            "control_type": "ListItemControl",
+            "bbox": [
+                575,
+                152,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Meta Quest Link",
+            "control_type": "ListItemControl",
+            "bbox": [
+                575,
+                299,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "CrispyDosa 18",
+            "control_type": "ListItemControl",
+            "bbox": [
+                575,
+                446,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Street View Download 360",
+            "control_type": "ListItemControl",
+            "bbox": [
+                575,
+                593,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "CrispyDosaStreetView",
+            "control_type": "ListItemControl",
+            "bbox": [
+                575,
+                740,
+                115,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "CrispyDosaStreetView_sRGB_ACEScg.jpg.tx",
+            "control_type": "ListItemControl",
+            "bbox": [
+                575,
+                887,
+                115,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "quattro_canti_4k.exr",
+            "control_type": "ListItemControl",
+            "bbox": [
+                575,
+                1034,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "quattro_canti_4k_Raw_ACEScg.exr.tx",
+            "control_type": "ListItemControl",
+            "bbox": [
+                575,
+                1181,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "CrispyDosa 22",
+            "control_type": "ListItemControl",
+            "bbox": [
+                690,
+                5,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "CrispyDosa 24",
+            "control_type": "ListItemControl",
+            "bbox": [
+                690,
+                152,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "OneDrive_1_12-12-2024",
+            "control_type": "ListItemControl",
+            "bbox": [
+                690,
+                299,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "OneDrive_2_12-12-2024",
+            "control_type": "ListItemControl",
+            "bbox": [
+                690,
+                446,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "CrispyDosa",
+            "control_type": "ListItemControl",
+            "bbox": [
+                690,
+                593,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Technical Report on my 3D modelling journey of Crispy Dosa",
+            "control_type": "ListItemControl",
+            "bbox": [
+                690,
+                740,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Ideas for XR Projects",
+            "control_type": "ListItemControl",
+            "bbox": [
+                690,
+                887,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "VLC media player",
+            "control_type": "ListItemControl",
+            "bbox": [
+                690,
+                1034,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "20 Problems",
+            "control_type": "ListItemControl",
+            "bbox": [
+                690,
+                1181,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "TurbineEngine",
+            "control_type": "ListItemControl",
+            "bbox": [
+                805,
+                5,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Spindle.fbx",
+            "control_type": "ListItemControl",
+            "bbox": [
+                805,
+                152,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "SpindleSeparated.fbx",
+            "control_type": "ListItemControl",
+            "bbox": [
+                805,
+                299,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "British_Airways_Lon_Bom_Flight_Confirmation",
+            "control_type": "ListItemControl",
+            "bbox": [
+                805,
+                446,
+                115,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "British_Airways_E-Ticket_Mail",
+            "control_type": "ListItemControl",
+            "bbox": [
+                805,
+                593,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Lon_Bom_Bus_Ticket_Flixbus",
+            "control_type": "ListItemControl",
+            "bbox": [
+                805,
+                740,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "New Text Document",
+            "control_type": "ListItemControl",
+            "bbox": [
+                805,
+                887,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "DFV_Framework_Innovation_Trifecta",
+            "control_type": "ListItemControl",
+            "bbox": [
+                805,
+                1034,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "British Airways - Check In",
+            "control_type": "ListItemControl",
+            "bbox": [
+                805,
+                1181,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "doc1",
+            "control_type": "ListItemControl",
+            "bbox": [
+                920,
+                5,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "AR_Report",
+            "control_type": "ListItemControl",
+            "bbox": [
+                920,
+                152,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Demo",
+            "control_type": "ListItemControl",
+            "bbox": [
+                920,
+                299,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "LibreOne Companion",
+            "control_type": "ListItemControl",
+            "bbox": [
+                920,
+                446,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Wwise Launcher",
+            "control_type": "ListItemControl",
+            "bbox": [
+                920,
+                593,
+                114,
+                129
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "FT_Prog",
+            "control_type": "ListItemControl",
+            "bbox": [
+                920,
+                740,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Realterm",
+            "control_type": "ListItemControl",
+            "bbox": [
+                920,
+                887,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "NDI",
+            "control_type": "ListItemControl",
+            "bbox": [
+                920,
+                1034,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Postman",
+            "control_type": "ListItemControl",
+            "bbox": [
+                920,
+                1181,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "NVDA",
+            "control_type": "ListItemControl",
+            "bbox": [
+                1035,
+                5,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Scripts",
+            "control_type": "ListItemControl",
+            "bbox": [
+                1495,
+                446,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "Script",
+            "control_type": "ListItemControl",
+            "bbox": [
+                1610,
+                593,
+                114,
+                104
+            ],
+            "z_index": 4
+        },
+        {
+            "name": "",
+            "control_type": "PaneControl",
+            "bbox": [
+                0,
+                0,
+                2560,
+                1440
+            ],
+            "z_index": 2
+        }
+    ],
+    "screenshot": "F:/Internship - KyleKeane\\screen_20251024-151837.png",
+    "img_size": [
+        2560,
+        1440
+    ]
+}
