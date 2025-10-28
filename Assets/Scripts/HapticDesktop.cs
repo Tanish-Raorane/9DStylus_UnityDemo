@@ -6,7 +6,7 @@ using System.Linq;
 
 public class HapticDesktop : MonoBehaviour
 {
-    public TextAsset jsonDump; // changed to a single file for clarity
+    //public TextAsset jsonDump; // changed to a single file for clarity
     public GameObject iconPrefab;
     public GameObject desktopBg;
 
@@ -15,15 +15,50 @@ public class HapticDesktop : MonoBehaviour
     private int iconCounter = 0;
     void Start()
     {
-        if (jsonDump == null)
-        {
-            Debug.LogWarning("No JSON Dump assigned in the Inspector");
-            return;
-        }
+        //if (jsonDump == null)
+        //{
+        //    Debug.LogWarning("No JSON Dump assigned in the Inspector");
+        //    return;
+        //}
 
         // Deserialize the JSON
-        DesktopDump desktopDump = JsonConvert.DeserializeObject<DesktopDump>(jsonDump.text);
-        GenerateDesktop(desktopDump);
+
+
+        StartCoroutine(RealtimeJSONReceiver());
+        
+    }
+
+    public IEnumerator RealtimeJSONReceiver()
+    {
+        string jsonPath = "F:/Internship - KyleKeane/ui_realtime.json";
+        float refreshRate = 1f;
+        string lastJson = "";
+
+        while(true)
+        {
+            if(System.IO.File.Exists(jsonPath))
+            {
+                string currentJson = System.IO.File.ReadAllText(jsonPath);
+
+                if(currentJson != lastJson)
+                {
+                    lastJson = currentJson;
+
+                    DesktopDump desktopDump = JsonConvert.DeserializeObject<DesktopDump>(currentJson);
+
+                    foreach(Transform child in desktopBg.transform)
+                    {
+                        Destroy(child.gameObject);
+                    }
+                    
+                    GenerateDesktop(desktopDump);
+                }
+
+            }
+            yield return new WaitForSeconds(refreshRate);   
+        }
+
+
     }
 
     public void GenerateDesktop(DesktopDump desktop)
@@ -117,7 +152,7 @@ public class HapticDesktop : MonoBehaviour
 
             // Instantiate icon prefab
             GameObject newIcon = Instantiate(iconPrefab, desktopBg.transform);
-            newIcon.name = icon.name ?? "UIElement";
+            newIcon.name = icon.name + " "+ icon.z_index ?? "UIElement";
             newIcon.transform.localPosition = new Vector3(localPos.x, localY, localPos.y);
 
             newIcon.transform.localScale = new Vector3(worldWidth / dt.lossyScale.x, 0.3f, worldHeight / dt.lossyScale.z);
