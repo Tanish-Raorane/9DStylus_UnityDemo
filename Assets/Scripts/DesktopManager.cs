@@ -59,10 +59,20 @@ public class DesktopManager : MonoBehaviour
         mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, UIntPtr.Zero);
     }
 
+    private void LeftClickHold()
+    {
+        mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, UIntPtr.Zero);
+    }
+
     private void RightClick()
     {
         mouse_event(MOUSEEVENTF_RIGHTDOWN, 0, 0, 0, UIntPtr.Zero);
         mouse_event(MOUSEEVENTF_RIGHTUP, 0, 0, 0, UIntPtr.Zero);
+    }
+
+    private void RightClickHold()
+    {
+        mouse_event(MOUSEEVENTF_RIGHTDOWN, 0, 0, 0, UIntPtr.Zero);
     }
 
     
@@ -83,19 +93,32 @@ public class DesktopManager : MonoBehaviour
         //    Vector3 move = new Vector3(moveX, movey, 0f) * moveSpeed * Time.deltaTime;
         //    movingObject.Translate(move, Space.World);
 
-        //    if(Input.GetKey(KeyCode.Space))
-        //    {
-        //        LeftClick();    
-        //    }
+            //if(Input.GetKey(KeyCode.Space))
+            //{
+            //    LeftClick();    
+            //}
 
-        //    if(Input.GetKey(KeyCode.RightShift))
-        //    {
-        //        RightClick();
-        //    }
+            //if(Input.GetKey(KeyCode.RightShift))
+            //{
+            //    RightClick();
+            //}
 
         //}
 
-       
+
+
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            LeftClick();
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            RightClick();
+        }
+
+
 
         //float normalizedX = Mathf.InverseLerp(minBounds.x, maxBounds.x, movingObject.position.x);
         //float normalizedY = Mathf.InverseLerp(minBounds.y, maxBounds.y, movingObject.position.y);
@@ -108,9 +131,21 @@ public class DesktopManager : MonoBehaviour
         int screenX = Mathf.RoundToInt(normalizedX * 2560f);
         int screenY = Mathf.RoundToInt((1 - normalizedY) * 1440f);
 
-        SetCursorPos(screenX, screenY); 
+        SetCursorPos(screenX, screenY);
 
-        
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            LeftClick();
+            Debug.Log("Left Click");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RightClick();
+            Debug.Log("Right Click");
+        }
+
+
 
     }
 }

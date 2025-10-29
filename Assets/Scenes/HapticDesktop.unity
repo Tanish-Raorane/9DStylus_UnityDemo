@@ -308,7 +308,7 @@ Transform:
   m_GameObject: {fileID: 79402355}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8.11, z: 2.13}
+  m_LocalPosition: {x: 0, y: 8.11, z: 5.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -811,7 +811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27da584251d3fb248828d7788e386465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonDump: {fileID: 4900000, guid: 1e47ae04eed954b4d908488f3a340fc8, type: 3}
   iconPrefab: {fileID: 6074971237783675693, guid: 13c77207688bba74eb879be643ebe181,
     type: 3}
   desktopBg: {fileID: 1073832706}
