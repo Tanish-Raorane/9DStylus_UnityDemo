@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingObject: {fileID: 1565550947}
   enableKeyboardControl: 0
-  overrideMouse: 0
+  overrideMouse: 1
   moveSpeed: 2
   virtualDesktopRenderer: {fileID: 1073832708}
   senmagWorkspace: {fileID: 79402355}

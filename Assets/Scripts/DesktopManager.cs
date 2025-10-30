@@ -41,6 +41,8 @@ public class DesktopManager : MonoBehaviour
     private Transform stylusCursor;
     private bool firstTime = false;
 
+    
+
 
     private Vector2 prevMousePos;
     
@@ -86,37 +88,39 @@ public class DesktopManager : MonoBehaviour
 
         stylusCursor = senmagWorkspace.transform.GetChild(0).GetChild(1);
 
-        //if(enableKeyboardControl)
+        //if (enableKeyboardControl)
         //{
         //    float moveX = Input.GetAxis("Horizontal");
         //    float movey = Input.GetAxis("Vertical");
         //    Vector3 move = new Vector3(moveX, movey, 0f) * moveSpeed * Time.deltaTime;
         //    movingObject.Translate(move, Space.World);
 
-            //if(Input.GetKey(KeyCode.Space))
-            //{
-            //    LeftClick();    
-            //}
+        //    if (Input.GetKey(KeyCode.Space))
+        //    {
+        //        LeftClick();
+        //    }
 
-            //if(Input.GetKey(KeyCode.RightShift))
-            //{
-            //    RightClick();
-            //}
+        //    if (Input.GetKey(KeyCode.RightShift))
+        //    {
+        //        RightClick();
+        //    }
 
         //}
 
 
 
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            LeftClick();
-        }
+        //if (Input.GetKey(KeyCode.LeftShift))
+        //{
+        //    LeftClick();
+        //}
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            RightClick();
-        }
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    RightClick();
+        //}
+
+        //LeftClickHold();
 
 
 
