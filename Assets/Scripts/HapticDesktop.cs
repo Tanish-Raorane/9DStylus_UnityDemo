@@ -10,6 +10,9 @@ public class HapticDesktop : MonoBehaviour
     public GameObject iconPrefab;
     public GameObject desktopBg;
 
+    private Dictionary<string, GameObject> activeElements = new Dictionary<string, GameObject>();
+    private HashSet<string> seenThisFrame = new HashSet<string>();
+
     private Dictionary<int, List<float>> skippedElements = new Dictionary<int, List<float>>(); //List of skipped elements displayed at the end
     private int i = 1; // Serial number to list out skipped elements
     private int iconCounter = 0;
@@ -46,10 +49,10 @@ public class HapticDesktop : MonoBehaviour
 
                     DesktopDump desktopDump = JsonConvert.DeserializeObject<DesktopDump>(currentJson);
 
-                    foreach(Transform child in desktopBg.transform)
-                    {
-                        Destroy(child.gameObject);
-                    }
+                    //foreach(Transform child in desktopBg.transform)
+                    //{
+                    //    Destroy(child.gameObject);
+                    //}
                     
                     GenerateDesktop(desktopDump);
                 }
@@ -100,6 +103,10 @@ public class HapticDesktop : MonoBehaviour
         //float imgW = 2560;
         //float imgH = 1440;
 
+        seenThisFrame.Clear();
+
+
+
         foreach (var icon in desktop.elements)
         {
             iconCounter++;
@@ -112,6 +119,9 @@ public class HapticDesktop : MonoBehaviour
                 i++;
                 continue;
             }
+
+            string elementName = icon.name;
+            seenThisFrame.Add(elementName);
 
             // --- Compute point from bbox ---
             float bboxLeft = icon.bbox[0];
@@ -150,19 +160,47 @@ public class HapticDesktop : MonoBehaviour
             float zSpacing = 0.4f;
             float localY = zBase + zSpacing * icon.z_index;
 
+            GameObject obj;
+            if(!activeElements.TryGetValue(elementName, out obj))
+            {
+                obj = Instantiate(iconPrefab, desktopBg.transform);
+                obj.name = icon.name + " " + icon.z_index ?? "UIElement";
+                activeElements[elementName] = obj;
+                Debug.Log($"Instantiated element : {elementName}");
+            }
+
+            
+            //update position and scale
+            obj.transform.localPosition = new Vector3(localPos.x, localY, localPos.y);
+            obj.transform.localScale = new Vector3(worldWidth / dt.lossyScale.x, 0.3f, worldHeight / dt.lossyScale.z);
+
             // Instantiate icon prefab
-            GameObject newIcon = Instantiate(iconPrefab, desktopBg.transform);
-            newIcon.name = icon.name + " "+ icon.z_index ?? "UIElement";
-            newIcon.transform.localPosition = new Vector3(localPos.x, localY, localPos.y);
+            //GameObject newIcon = Instantiate(iconPrefab, desktopBg.transform);
+            //newIcon.name = icon.name + " "+ icon.z_index ?? "UIElement";
+            //newIcon.transform.localPosition = new Vector3(localPos.x, localY, localPos.y);
 
-            newIcon.transform.localScale = new Vector3(worldWidth / dt.lossyScale.x, 0.3f, worldHeight / dt.lossyScale.z);
+            //newIcon.transform.localScale = new Vector3(worldWidth / dt.lossyScale.x, 0.3f, worldHeight / dt.lossyScale.z);
 
-            Debug.Log($"Instantiated '{newIcon.name}' at {localPos} (norm: {normalizedX:F2}, {normalizedY:F2})");
+            //Debug.Log($"Instantiated '{newIcon.name}' at {localPos} (norm: {normalizedX:F2}, {normalizedY:F2})");
+
+
         }
+
+        var toRemove = activeElements.Keys.Except(seenThisFrame).ToList();
+        foreach(var key in toRemove)
+        {
+            Destroy(activeElements[key]);
+            activeElements.Remove(key);
+            Debug.Log($"Removed element : {key}");
+
+        }
+
 
         Debug.Log("Total Number of Icons : " + iconCounter);
         Debug.Log("Number of Skipped Elements : "+ skippedElements.Count);
         
+
+
     }
 }
 
