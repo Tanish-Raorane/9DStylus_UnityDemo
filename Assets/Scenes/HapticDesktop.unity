@@ -216,14 +216,14 @@ MonoBehaviour:
   maximumForce: 1000
   physicsFramerate: 1000
   physicsIterations: 15
-  hapticStiffness: 1
+  hapticStiffness: 2
   spatialMultiplier: 50
   defaultCursorModel: {fileID: 0}
   defaultRightClickMenu: {fileID: 506018373148453668, guid: 2eeae62e4d81e98448229671b00bc41f,
     type: 3}
   cursorMass: 0.00015
-  teleportThreshold: 0.45
-  cursorScale: 4
+  teleportThreshold: 2
+  cursorScale: 2
   cursorFrictionStatic: 0
   cursorFrictionDynamic: 0
   allowCustomCursors: 0
@@ -812,6 +812,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconPrefab: {fileID: 6074971237783675693, guid: 13c77207688bba74eb879be643ebe181,
+    type: 3}
+  forceFieldPrefab: {fileID: 6273406794001834611, guid: 0b4e6202971254848bac772e26819077,
     type: 3}
   desktopBg: {fileID: 1073832706}
 --- !u!4 &619893831

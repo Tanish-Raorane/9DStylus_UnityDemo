@@ -8,6 +8,7 @@ public class HapticDesktop : MonoBehaviour
 {
     //public TextAsset jsonDump; // changed to a single file for clarity
     public GameObject iconPrefab;
+    public GameObject forceFieldPrefab;
     public GameObject desktopBg;
 
     private Dictionary<string, GameObject> activeElements = new Dictionary<string, GameObject>();
@@ -152,27 +153,75 @@ public class HapticDesktop : MonoBehaviour
             float normalizedWidth = icon.bbox[2] / imgW;
             float normalizedHeight = icon.bbox[3] / imgH;
 
-            float worldWidth = normalizedWidth * worldSize.x;
-            float worldHeight = normalizedHeight * worldSize.y;
+            float worldWidth, worldHeight;
+
+            if (icon.control_type == "ListItemControl")
+            {
+                worldWidth = normalizedWidth * worldSize.x * 0.5f;
+                worldHeight = normalizedHeight * worldSize.y * 0.7f;
+
+            }
+
+            else
+            {
+                worldWidth = normalizedWidth * worldSize.x;
+                worldHeight = normalizedHeight * worldSize.y;
+            }
+
 
 
             float zBase = 0.05f;
-            float zSpacing = 0.4f;
+            float zSpacing;
+
+            if (icon.control_type == "WindowControl")
+            {
+                zSpacing = 0.2f;
+            }
+                
+            else
+            {
+                zSpacing = 0.4f;
+            }
+
             float localY = zBase + zSpacing * icon.z_index;
 
-            GameObject obj;
+
+            GameObject obj, forceFieldObj;
             if(!activeElements.TryGetValue(elementName, out obj))
             {
+
                 obj = Instantiate(iconPrefab, desktopBg.transform);
-                obj.name = icon.name + " " + icon.z_index ?? "UIElement";
-                activeElements[elementName] = obj;
-                Debug.Log($"Instantiated element : {elementName}");
+
+                if (icon.control_type == "ListItemControl")
+                {
+                    forceFieldObj = Instantiate(forceFieldPrefab, desktopBg.transform);
+                    forceFieldObj.transform.SetParent(obj.transform);
+                    forceFieldObj.transform.localPosition = Vector3.zero;
+                    obj.GetComponent<BoxCollider>().enabled = false;
+
+
+                    //obj.AddComponent<Senmag_gravityWell>();
+                    //obj.GetComponent<Senmag_gravityWell>().radius = 0.3f;
+                    //obj.GetComponent<Senmag_gravityWell>().dampingFilter = 0.9f;
+                }
+
+                
+                
+
+                 obj.name = icon.name + " " + icon.z_index ?? "UIElement";
+                 activeElements[elementName] = obj;
+                 Debug.Log($"Instantiated element : {elementName} control type : {icon.control_type}");
+                
+                
             }
 
             
             //update position and scale
             obj.transform.localPosition = new Vector3(localPos.x, localY, localPos.y);
             obj.transform.localScale = new Vector3(worldWidth / dt.lossyScale.x, 0.3f, worldHeight / dt.lossyScale.z);
+
+           
+                
 
             // Instantiate icon prefab
             //GameObject newIcon = Instantiate(iconPrefab, desktopBg.transform);
@@ -199,7 +248,6 @@ public class HapticDesktop : MonoBehaviour
         Debug.Log("Total Number of Icons : " + iconCounter);
         Debug.Log("Number of Skipped Elements : "+ skippedElements.Count);
         
-
 
     }
 }
