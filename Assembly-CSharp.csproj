@@ -99,6 +99,7 @@
     <Compile Include="Assets\CubeSphere.cs" />
     <Compile Include="Assets\SenmagSDK\Demos\Paint_Demo\Painter\Metaballs\RendererFeatures\RenderMetaballsScreenSpace.cs" />
     <Compile Include="Assets\Scenes\AWE_Demo\prefabs\WeighingScale.cs" />
+    <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\constantUpdate.cs" />
     <Compile Include="Assets\sceneScripts\Slider.cs" />
     <Compile Include="Assets\SenmagSDK\Demos\Welding\prefabs\Tools\weldWire.cs" />
