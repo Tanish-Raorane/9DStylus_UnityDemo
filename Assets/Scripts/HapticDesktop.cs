@@ -175,12 +175,12 @@ public class HapticDesktop : MonoBehaviour
 
             if (icon.control_type == "WindowControl")
             {
-                zSpacing = 0.2f;
+                zSpacing = 0.1f;
             }
                 
             else
             {
-                zSpacing = 0.4f;
+                zSpacing = 0.2f;
             }
 
             float localY = zBase + zSpacing * icon.z_index;
